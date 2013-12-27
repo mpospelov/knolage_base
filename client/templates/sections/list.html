@@ -1,9 +1,9 @@
 <template name="sections_list">
-{{#each sections}}
-<div>
-  Раздел "{{name}}"
-</div>
-{{/each}}
+<ul>
+  {{#each sections}}
+  <li><a href="/sections/{{name}}">{{name}}</a></li>
+  {{/each}}
+</ul>
 <form class="bs-docs-example" id="create_section">
   <fieldset>
     <label>Название секции</label>

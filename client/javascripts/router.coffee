@@ -1,25 +1,22 @@
-Router = Backbone.Router.extend(
+Router = Backbone.Router.extend
   routes:
-    "sections": "sections"
-    help: "help" # http://your_domain/help
-    "profile": "profile"
+    "": "root"
+    "sections": "sections_list"
+    "sections/:name": "section"
 
-  sections: ->
-    Session.set('currentPage', 'profile')
-    
-  profile: ->
-    Session.set('currentPage', 'profile')
+  root: ->
+    Session.set('currentPage', 'root')
 
-  main: ->
+  section: (name)->
+    Session.set('section_name', name)
+    Session.set('currentPage', 'section')
 
-  
-  # Your homepage code
-  # for example: Session.set('currentPage', 'homePage');
-  help: ->
-)
+  sections_list: ->
+    Session.set('currentPage', 'sections_list')
 
 # Help page
-app = new Router
+@SectionRouter = new Router
+Session.setDefault('currentPage', 'root')
 Meteor.startup ->
   Backbone.history.start pushState: true
   
