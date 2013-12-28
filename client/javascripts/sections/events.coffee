@@ -5,3 +5,6 @@ Template.sections_list.events =
 
 Template.sections_list.sections = ->
   Section.find()
+
+Template.popular_sections.sections = ->
+  Section.find {}, {limit: 5}

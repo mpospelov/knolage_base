@@ -2,8 +2,10 @@
 <ul>
   {{#each comments}}
   <li>
-    <span>{{ username user_id }}</span>
-    <span>{{ content }}</span>
+    <blockquote>
+      <span>{{ content }}</span>
+      <small>{{ username user_id }}</small>
+    </blockquote>
   </li>
   {{/each}}
 </ul>
