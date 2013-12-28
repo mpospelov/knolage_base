@@ -12,11 +12,12 @@
       <div class="masthead">
         <h3>База Знаний</h3>
       </div>
-      {{#unless currentUser}}
+      {{#if currentUser}}
+      {{> yield }}
+      {{else}}
         <h3>Зарегистрируйтесь или войдите пожалуйста!</h3>
       {{/if}}
 
-      {{> yield }}
 
       <hr>
 
