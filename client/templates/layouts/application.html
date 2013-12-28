@@ -12,9 +12,7 @@
       <div class="masthead">
         <h3>База Знаний</h3>
       </div>
-      {{#if currentUser}}
-        <h3>Добро пожаловать {{ currentUser.username}}</h3>
-      {{else}}
+      {{#unless currentUser}}
         <h3>Зарегистрируйтесь или войдите пожалуйста!</h3>
       {{/if}}
 
