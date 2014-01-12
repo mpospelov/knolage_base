@@ -1,4 +1,11 @@
 <template name="question">
-<blockquote>{{question.value}}</blockquote>
+<div class="question">
+  <div class="content">
+    <p>{{question.value}}</p>
+    <span class="count">{{question.comments_count}}</span>
+    <small>{{ question.username user_id }}</small>
+  </div>
+</div>
+
   {{> comments}}
 </template>

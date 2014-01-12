@@ -1,14 +1,15 @@
 <template name="questions_list">
   <ul>
     {{#each questions}}
-    <li>
-      <a href="/questions/{{_id}}">
-        <span class="value">{{value}}</span>
-        <span class="commets-count">{{comments_count}}</span>
-      </a>
-    </li>
+    <div class="question">
+      <div class="content">
+        <p>{{value}}</p>
+        <span class="count">{{comments_count}}</span>
+        <small>{{ username user_id }}</small>
+      </div>
+      <a class="btn" href="/questions/{{_id}}">Посмотреть Комментарии</a>
+    </div>
     {{/each}}
-  </ul>
   
   <form id="create_question">
     <fieldset>
