@@ -4,22 +4,21 @@
   <meta name="author" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+
 </head>
 
 <body>
-    <div class="container-fluid">
-      {{> navbar}}
-      <div class="masthead">
-        <h3>База Знаний</h3>
+    {{> navbar}}
+    {{> header}}
+    
+    <div class="container">
+      <div class="row span9">
+        {{#if currentUser}}
+          {{> yield }}
+        {{else}}
+          <h3>Зарегистрируйтесь или войдите пожалуйста!</h3>
+        {{/if}}
       </div>
-      {{#if currentUser}}
-      {{> yield }}
-      {{else}}
-        <h3>Зарегистрируйтесь или войдите пожалуйста!</h3>
-      {{/if}}
-
-
-      <hr>
 
       <div class="footer">
       </div>

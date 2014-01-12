@@ -1,7 +1,13 @@
 <template name="sections_list">
 <ul>
   {{#each sections}}
-  <li><a href="/sections/{{name}}">{{name}}</a></li>
+  <div class="section"> 
+    <a href="/sections/{{_id}}">
+      <h3>{{name}}</h3>
+    </a>
+    <div class="count">{{questions_count}}</div>
+  </div>
+
   {{/each}}
 </ul>
 <form class="bs-docs-example" id="create_section">
