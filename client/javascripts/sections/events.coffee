@@ -7,4 +7,4 @@ Template.sections_list.sections = ->
   Section.find()
 
 Template.popular_sections.sections = ->
-  Section.find {}, {limit: 5}
+  Section.find({},{limit: 5, sort: {questions_count: -1}})
