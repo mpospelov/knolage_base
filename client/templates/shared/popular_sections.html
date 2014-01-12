@@ -1,8 +1,11 @@
 <template name="popular_sections">
 <h3>Популярные разделы</h3>
   {{#each sections}}
-  <blockquote> 
-    <a href="/sections/{{name}}">{{name}}</a>
-  </blockquote>
+  <div class="section"> 
+    <a href="/sections/{{_id}}">
+      <h3>{{name}}</h3>
+    </a>
+    <div class="count">{{questions_count}}</div>
+  </div>
   {{/each}}
 </template>

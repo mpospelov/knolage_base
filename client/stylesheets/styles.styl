@@ -1,3 +1,42 @@
 @import 'nib'
 header
   margin-top: 50px;
+.question
+  background: #C9C9C9;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  position: relative;
+  min-height: 40px;
+  p
+    font-style: italic;
+    font-size: 15pt;
+  small
+    text-decoration: underline;
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+    font-size: 12pt;
+    color: #fff
+  .count
+    font-size: 20pt;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: green;
+.section
+  border: 3px solid green;
+  border-radius: 5px;
+  padding: 10px;
+  position: relative;
+  margin-bottom: 10px;
+  box-shadow: 0 0 5px;
+  min-height: 25px;
+  &:hover
+    background: aliceblue;
+  .count 
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 20pt;
+    color: red;

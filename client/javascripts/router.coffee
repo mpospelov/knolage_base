@@ -2,7 +2,7 @@ Router = Backbone.Router.extend
   routes:
     "": "root"
     "sections": "sections_list"
-    "sections/:name": "section"
+    "sections/:id": "section"
     "questions/:id": "questions"
 
 
@@ -13,8 +13,8 @@ Router = Backbone.Router.extend
   root: ->
     Session.set('currentPage', 'root')
 
-  section: (name)->
-    Session.set('section_name', name)
+  section: (id)->
+    Session.set('section_id', id)
     Session.set('currentPage', 'section')
 
   sections_list: ->

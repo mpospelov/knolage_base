@@ -6,8 +6,10 @@ Template.comments.events =
       question_id: question._id
       content: $("#comment_content").val()
       user_id: Meteor.userId()
-    Question.update question._id, $inc:
-                                    comments_count: 1
+    Question.update question._id, $inc:{comments_count: 1}
+    $("#create_comment")[0].reset()
+
+
 Template.comments.username = (user_id)->
   user = Meteor.users.findOne _id: user_id
   user.emails[0].address if user

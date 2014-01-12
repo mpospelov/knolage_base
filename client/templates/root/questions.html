@@ -1,10 +1,13 @@
 <template name="root_questions">
   <h3>Последние Вопросы</h3>
   {{#each questions}}
-    <blockquote>
-      {{username user_id}}
-        <a href="/questions/{{_id}}">{{value}}</a>
-      {{comments_count}}
-    </blockquote>
+  <div class="question">
+    <div class="content">
+      <p>{{value}}</p>
+      <span class="count">{{comments_count}}</span>
+      <small>{{ username user_id }}</small>
+    </div>
+    <a class="btn" href="/questions/{{_id}}">Посмотреть Комментарии</a>
+  </div>
   {{/each}}
 </template>
