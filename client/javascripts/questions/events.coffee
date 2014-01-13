@@ -12,7 +12,7 @@ Template.questions_list.events =
     $("#create_question")[0].reset()
       
 Template.questions_list.questions = ->
-  Question.find section_id: Session.get("section_id")
+  Question.find {section_id: Session.get("section_id")}, {sort: {date_created: -1}}
 
 Template.question.question = ->
   Question.findOne _id: Session.get("question_id")
