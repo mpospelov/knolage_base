@@ -10,8 +10,6 @@ Template.questions_list.events =
       comments_count: 0
       date_created: Date.now()
     $("#create_question")[0].reset()
-
-
       
 Template.questions_list.questions = ->
   Question.find section_id: Session.get("section_id")
@@ -20,7 +18,10 @@ Template.question.question = ->
   Question.findOne _id: Session.get("question_id")
 
 Template.comments.comments = ->
-  Comment.find question_id: Session.get("question_id")
+  Comment.find {question_id: Session.get("question_id")}, {sort: {rate: -1}}
 
 Template.comments.canRemove = (comment)->
   Meteor.userId() == comment.user_id
+Template.comments.canPlus = (comment)->
+  like = CommentLike.findOne user_id: Meteor.userId(), comment_id: comment._id
+  like is undefined

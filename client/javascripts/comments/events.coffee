@@ -11,7 +11,13 @@ Template.comments.events =
   "click .remove_coment": (e)->
     answer = confirm("Вы уверены что хотите удалить комментарий?")
     if answer
-      Comment.remove $(e.toElement).data("id")
+      Comment.remove $(e.toElement).closest("li").data("id")
+  "click .plus": (e)->
+    id = $(e.toElement).closest("li").data("id")
+    Comment.rateUp(id)
+  "click .minus": (e)->
+    id = $(e.toElement).closest("li").data("id")
+    Comment.rateDown(id)
 
 
 Template.comments.username = (user_id)->

@@ -1,13 +1,21 @@
 <template name="comments">
 <ul class="comments">
   {{#each comments}}
-  <li>
+  <li data-id="{{_id}}">
     <blockquote>
       <span>{{ content }}</span>
       <small>{{ username user_id }}</small>
-      <div class="">
+      <span class="rate">{{rate}}</span>
+      <div class="buttons">
+        {{#if canPlus this}}
+          <button class="plus btn btn-success">+</button>
+        {{/if}}
+        {{#unless canPlus this}}
+          <button class="minus btn btn-danger">-</button>
+        {{/unless}}
+      </div>
       {{#if canRemove this}}
-        <a class="btn btn-danger remove_coment" data-id="{{_id}}">Удалить</a>
+        <a class="btn btn-danger remove_coment">Удалить</a>
       {{/if}}
     </blockquote>
   </li>
