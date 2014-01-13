@@ -8,6 +8,10 @@ Template.comments.events =
       user_id: Meteor.userId()
     Question.update question._id, $inc:{comments_count: 1}
     $("#create_comment")[0].reset()
+  "click .remove_coment": (e)->
+    answer = confirm("Вы уверены что хотите удалить комментарий?")
+    if answer
+      Comment.remove $(e.toElement).data("id")
 
 
 Template.comments.username = (user_id)->

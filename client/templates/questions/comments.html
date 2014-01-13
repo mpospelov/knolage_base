@@ -1,21 +1,30 @@
 <template name="comments">
-<ul>
+<ul class="comments">
   {{#each comments}}
   <li>
     <blockquote>
       <span>{{ content }}</span>
       <small>{{ username user_id }}</small>
+      <div class="">
+      {{#if canRemove this}}
+        <a class="btn btn-danger remove_coment" data-id="{{_id}}">Удалить</a>
+      {{/if}}
     </blockquote>
   </li>
   {{/each}}
 </ul>
 
-<form id="create_comment">
-  <fieldset>
-    <label>Оставить комментарий</label>
-    <input type="text" id="comment_content" placeholder="">
-    <button type="submit" class="btn">Создать</button>
-  </fieldset>
+<form class="form-horizontal" id="create_comment">
+  <div class="control-group">
+    <label class="control-label">Оставить комментарий</label>
+    <div class="controls">
+      <textarea id="comment_content"/>
+    </div>
+  </div>
+  <div class="control-group">
+
+    <button type="submit" class="btn" style="float: right">Создать</button>
+  </div>
 </form>
 </template>
 

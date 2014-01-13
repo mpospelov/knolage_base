@@ -11,6 +11,7 @@ Template.questions_list.events =
       date_created: Date.now()
     $("#create_question")[0].reset()
 
+
       
 Template.questions_list.questions = ->
   Question.find section_id: Session.get("section_id")
@@ -21,3 +22,5 @@ Template.question.question = ->
 Template.comments.comments = ->
   Comment.find question_id: Session.get("question_id")
 
+Template.comments.canRemove = (comment)->
+  Meteor.userId() == comment.user_id
