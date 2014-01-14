@@ -1,21 +1,26 @@
 <template name="questions_list">
-  <ul>
-    {{#each questions}}
-    <div class="question">
-      <div class="content">
-        <p>{{value}}</p>
-        <span class="count">{{comments_count}}</span>
-        <small>{{ username user_id }}</small>
-      </div>
-      <a class="btn" href="/questions/{{_id}}">Посмотреть Комментарии</a>
+<h2>{{section_name}}</h2>
+<ul>
+  {{#each questions}}
+  <div class="question">
+    <div class="content">
+      <p>{{value}}</p>
+      <span class="count">{{comments_count}}</span>
+      <small>{{ username user_id }}</small>
     </div>
-    {{/each}}
-  
-  <form class="form-horizontal" id="create_question">
-    <fieldset>
-      <label>Задайте вопрос</label>
-      <input type="text" id="question_value" placeholder="">
-      <button type="submit" class="btn">Создать</button>
-    </fieldset>
-  </form>
+    <a class="btn" href="/questions/{{_id}}">Посмотреть Комментарии</a>
+  </div>
+  {{/each}}
+</ul>
+
+<form class="form-horizontal" id="create_question">
+  <div class="controls">
+    <label>Задайте вопрос</label>      
+    <textarea id="question_value"/>
+    </div>
+  </div>
+  <div class="control-group">
+    <button type="submit" class="btn" style="float: right">Создать</button>
+  </div>
+</form>
 </template>

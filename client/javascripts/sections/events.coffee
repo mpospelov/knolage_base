@@ -4,6 +4,8 @@ Template.sections_list.events =
     Section.insert 
       name: $("#section_name").val()
       questions_count: 0
+    $("#create_section")[0].reset()
+
 
 Template.sections_list.sections = ->
   Section.find()

@@ -1,8 +1,11 @@
-<template name="users_list">
-<h3>Пользователи</h3>
+<template name="top_users">
+<h3>Топ пользователей</h3>
 <ul>
 {{#each users}}
-  <li>{{username _id}}</li>
+<li>
+  <h3>{{username}}</h3>
+  <span class="rate">{{rate}}</span>
+</li>
 {{/each}}
 </ul>
 </template>
